@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta charset="utf-8">
+<title>弥漫发布页</title>
+<script>
+function addBookmark() {
+  var title = document.title;
+  var url = location.href;
+  try {
+    window.external.addFavorite(url, title);
+  } catch (e) {
+    try {
+      window.sidebar.addPanel(url, title);
+    } catch (e) {
+      alert("加入收藏失败，请手动添加");
+    }
+  }
+}
+</script>
+</head>
+<body>
+<h3><a href="javascript:void(0);" onclick="addBookmark();">弥漫发布页，请记牢本网址防止无法访问弥漫！点我收藏本页</a></h3>
+<a href="https://www.mimanx.com">www.mimanx.com</a>
+</body>
+</html>
